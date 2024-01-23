@@ -1,0 +1,132 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppines' , sans-serif;
+}
+
+.Header{
+  margin: 2px;
+  padding: 12px 23px;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  box-shadow: 0px 11px 21px 2px rgba(13, 13, 13, 0.5);
+}
+.Header .logo-img{
+  /* border: 1px solid blue; */
+  width: 120px;
+}
+.Header .logo{
+  /* border: 1px solid black; */
+  flex-grow: 1;
+  text-align: center;
+}
+.Header .nev-item{
+  /* border: 1px solid green; */
+  flex-grow: 2;
+}
+.Header .nev-item ul {
+  display: flex;
+  list-style: none;
+  font-size: 30px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px;
+}
+.main{
+  margin: 20px 12px;
+  padding: 2px 10px;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid dodgerblue; */
+}
+.main .main-container{
+  /* border: 1px solid pink; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px 0px;
+}.card{
+  box-shadow: 0px 7px 12px 1px rgba(13, 13, 13, 0.5);
+}
+.card .card-detail{
+  /* border: 1px solid red; */
+  padding: 0px 12px
+}
+.main .main-container img{
+  width: 310px;
+  aspect-ratio: 2/1;
+}
+.main .search{
+  /* border: none; */
+  /* border: 1px solid red; */
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -50px;
+}
+.main .search .search-input{
+  border: none;
+  outline: none;
+  font-size: 30px;
+  padding: 9px;
+  border-radius: 17px;
+  box-shadow: -3px 3px 12px 0px rgba(13, 13, 13, 0.5);
+}
+.main .search .search-button{
+  border: none;
+  outline: none;
+  font-size: 20px;
+  padding:10px 21px;
+  border-radius: 17px;
+  margin-left: 12px;
+  font-weight: 600px;
+  background: linear-gradient(130deg , rgba(251, 182, 54, 0.947) , rgb(243, 233, 233) , rgb(251, 189, 74));
+  cursor: pointer;
+}
