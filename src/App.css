@@ -67,16 +67,19 @@
   text-align: center;
 }
 .Header .nev-item{
-  /* border: 1px solid green; */
   flex-grow: 2;
 }
 .Header .nev-item ul {
+  /* border: 1px solid green; */
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   font-size: 30px;
   align-items: center;
   justify-content: space-around;
   padding: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
 }
 .main{
   margin: 20px 12px;
@@ -91,6 +94,8 @@
   align-items: center;
   justify-content: space-around;
   padding: 12px 0px;
+  flex-wrap: wrap;
+  row-gap: 21px;
 }.card{
   box-shadow: 0px 7px 12px 1px rgba(13, 13, 13, 0.5);
 }
