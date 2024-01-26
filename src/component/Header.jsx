@@ -1,3 +1,9 @@
+import { useState } from "react";
+
+// const loguser = () => {
+//   return true;
+// };
+
 const Tittle = () => {
   return (
     <>
@@ -7,6 +13,7 @@ const Tittle = () => {
 };
 
 const Header = () => {
+  const [isLoggedin, setisLoggedin] = useState(false);
   return (
     <>
       <div className="Header">
@@ -15,13 +22,22 @@ const Header = () => {
           <Tittle />
         </div>
         <div className="nev-item">
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contect</li>
-                <li>Card</li>
-                <li>Offer</li>
-            </ul>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contect</li>
+            <li>Card</li>
+            <li>Offer</li>
+            {isLoggedin ? (
+              <li>
+                <button onClick={()=>setisLoggedin(false)}>Logout</button>
+              </li>
+            ) : (
+              <li>
+                <button onClick={()=>setisLoggedin(true)}>Login</button>
+              </li>
+            )}
+          </ul>
         </div>
       </div>
     </>
