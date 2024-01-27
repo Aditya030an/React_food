@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 // const loguser = () => {
 //   return true;
 // };
@@ -23,18 +23,24 @@ const Header = () => {
         </div>
         <div className="nev-item">
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contect</li>
+            <Link to="/">
+              <li>Home</li>
+            </Link>
+            <Link to="/about">
+              <li>About</li>
+            </Link>
+            <Link to="/contact">
+              <li>Contact</li>
+            </Link>
             <li>Card</li>
             <li>Offer</li>
             {isLoggedin ? (
               <li>
-                <button onClick={()=>setisLoggedin(false)}>Logout</button>
+                <button onClick={() => setisLoggedin(false)}>Logout</button>
               </li>
             ) : (
               <li>
-                <button onClick={()=>setisLoggedin(true)}>Login</button>
+                <button onClick={() => setisLoggedin(true)}>Login</button>
               </li>
             )}
           </ul>

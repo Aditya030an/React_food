@@ -669,6 +669,7 @@ export const restorentList = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
 ];
+export const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
 export const RestorentCard = ({
   name,
@@ -683,7 +684,7 @@ export const RestorentCard = ({
     <>
       <div className="card">
         <div className="image">
-          <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} />
+          <img src={IMG_URL + cloudinaryImageId} />
         </div>
         <div className="card-detail">
           <h1>{name}</h1>
