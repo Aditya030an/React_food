@@ -3,12 +3,7 @@ import { restorentList } from "./constant";
 import { RestorentCard } from "./constant";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
-function filterdata(searchInput, restorent) {
-  return restorent.filter((rest) =>
-    rest.info.name.toLowerCase().includes(searchInput.toLowerCase())
-  );
-}
+import filterdata from "../utils/filterData";
 
 const Body = () => {
   // const [restorent, setrestorent] = useState(restorentList);

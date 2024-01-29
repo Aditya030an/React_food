@@ -26,7 +26,7 @@ const appRouter = createBrowserRouter([
         element:<About/>,
         children:[{ //every time use outlet for routing children , in parent component 
           path:"profile",  //this will go to localhost:1234/about/profile   if i use /profile it will be rout through root  , so donot use /
-          element:<Profile/>
+          element:<Profile name={"ABC"}/>
         }]
       },
       {

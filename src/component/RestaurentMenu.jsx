@@ -2,38 +2,17 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_URL } from "./constant";
 import Shimmer from "./Shimmer";
+import useRestaurant from "../utils/useRestaurent";
 
 const RestaruntMenu = () => {
-  const [restaurent, setRestaurent] = useState(null);
-  const [menu, setMenu] = useState([]);
-  //   const [restaurent, setRestaurent] = useState(null);
-  //how to read a dinamic url params
-
+  
   const { restId } = useParams();
-  // const param = useParams();
-  // const {restId} = param;
-  // console.log(param);
+  
+  const restaurent = useRestaurant(restId)[0];
+  const menu = useRestaurant(restId)[1];
 
-  useEffect(() => {
-    getRestaurentMenu();
-  }, []);
-
-  async function getRestaurentMenu() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId="+restId+"&catalog_qa=undefined&submitAction=ENTER"
-    );
-    const json = await data.json();
-    console.log(json.data?.cards[0]?.card?.card?.info);
-    setRestaurent(json.data?.cards[0]?.card?.card?.info);
-    setMenu(json.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[1]?.card?.card?.itemCards);
-    // const menudata = json.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[1]?.card?.card?.itemCards;
-    // menudata.map((name)=>{
-    //   console.log(name);
-    //   console.log(name?.card?.info.name);
-    // })
-  }
-  // if(!restaurent){
-  //   return(<Shimmer/>);
+  // if(!menu){
+  //   return (<h1>Not Found</h1>);
   // }
   return(!restaurent)?<Shimmer/> :(
     <>
@@ -46,14 +25,11 @@ const RestaruntMenu = () => {
           <h3>{restaurent.city}</h3>
           <h3>{restaurent.avgRating}</h3>
           <h3>{restaurent.costForTwoMessage}</h3>
-          {/* <h3>{restaurent.cuisines.join(",")}</h3> */}
         </div>
         <div>
           <h1>Menu</h1>
-            {
+            {!menu ? <h1>Not Found</h1>:
               menu.map((item)=>{
-                console.log(item);
-                console.log(item?.card?.info?.name);
                 return(
 
                   <li key={item?.card?.info?.id}>{item?.card?.info?.name}</li>
