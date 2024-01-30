@@ -9,6 +9,7 @@ import Error from './component/Error.jsx'
 import { createBrowserRouter , RouterProvider } from 'react-router-dom'
 import RestaruntMenu from './component/RestaurentMenu.jsx'
 import Profile from './component/Profile.jsx'
+import Instamart from './component/Instamart.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/restaurants/:restId",
         element:<RestaruntMenu/>
+      },
+      {
+        path:"/instamart",
+        element:<Instamart/>
       }
     ]
   },
