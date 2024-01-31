@@ -10,6 +10,7 @@ import { createBrowserRouter , RouterProvider } from 'react-router-dom'
 import RestaruntMenu from './component/RestaurentMenu.jsx'
 import Profile from './component/Profile.jsx'
 import Instamart from './component/Instamart.jsx'
+import Cart from './component/Cart.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/instamart",
         element:<Instamart/>
+      },
+      {
+        path:"/cart",
+        element:<Cart/>
       }
     ]
   },
